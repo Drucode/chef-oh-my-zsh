@@ -42,7 +42,7 @@ Set `['oh-my-zsh']['users']` and include `oh-my-zsh::users` in your node's
 {
   "oh-my-zsh": {
     "users": {
-      "vagrant": {
+      "example": {
         "theme": "gentoo",
         "plugins": [ "git" ],
         "zsh_options": [
