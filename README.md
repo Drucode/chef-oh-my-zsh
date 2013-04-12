@@ -1,24 +1,17 @@
 oh-my-zsh Cookbook
 ===========================
-TODO: Enter the cookbook description here.
-
-e.g.
-This cookbook makes your favorite breakfast sandwhich.
+This cookbook installs [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh).
 
 Requirements
 ------------
-TODO: List your cookbook requirements. Be sure to include any requirements this cookbook has on platforms, libraries, other cookbooks, packages, operating systems, etc.
 
-e.g.
-#### packages
-- `toaster` - oh-my-zsh needs toaster to brown your bagel.
+- Chef 11
 
 Attributes
 ----------
-TODO: List you cookbook attributes here.
 
 e.g.
-#### oh-my-zsh::default
+#### oh-my-zsh::users
 <table>
   <tr>
     <th>Key</th>
@@ -27,35 +20,43 @@ e.g.
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['oh-my-zsh']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
+    <td><tt>['oh-my-zsh']['users']</tt></td>
+    <td>Hash</td>
+    <td>Hash of usernames to options (see **Usage** below)</td>
+    <td><tt>{}</tt></td>
   </tr>
 </table>
 
 Usage
 -----
 #### oh-my-zsh::default
-TODO: Write usage instructions for each cookbook.
 
-e.g.
-Just include `oh-my-zsh` in your node's `run_list`:
+Just include `oh-my-zsh` in your node's `run_list` and use the `oh_my_zsh`
+LWRP.
+
+#### oh-my-zsh::users
+
+Set `['oh-my-zsh']['users']` and include `oh-my-zsh::users` in your node's
+`run_list`:
 
 ```json
-{
-  "name":"my_node",
-  "run_list": [
-    "recipe[oh-my-zsh]"
-  ]
+'oh-my-zsh': {
+  'users': {
+    'vagrant': {
+      'theme': 'gentoo',
+      'plugins': [ 'git' ],
+      'zsh_options': [
+        'export EDITOR=vim',
+        'setopt NO_CORRECT_ALL'
+      ]
+    }
+  }
 }
 ```
 
 Contributing
 ------------
-TODO: (optional) If this is a public cookbook, detail the process for contributing. If this is a private cookbook, remove this section.
 
-e.g.
 1. Fork the repository on Github
 2. Create a named feature branch (like `add_component_x`)
 3. Write you change
@@ -65,4 +66,4 @@ e.g.
 
 License and Authors
 -------------------
-Authors: TODO: List authors
+* [Michael Paul Thomas Conigliaro](http://conigliaro.org)
