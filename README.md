@@ -22,7 +22,7 @@ e.g.
   <tr>
     <td><tt>['oh-my-zsh']['users']</tt></td>
     <td>Hash</td>
-    <td>Hash of usernames to options (see **Usage** below)</td>
+    <td>Hash of usernames to options (see Usage below)</td>
     <td><tt>{}</tt></td>
   </tr>
 </table>
@@ -40,15 +40,17 @@ Set `['oh-my-zsh']['users']` and include `oh-my-zsh::users` in your node's
 `run_list`:
 
 ```json
-'oh-my-zsh': {
-  'users': {
-    'vagrant': {
-      'theme': 'gentoo',
-      'plugins': [ 'git' ],
-      'zsh_options': [
-        'export EDITOR=vim',
-        'setopt NO_CORRECT_ALL'
-      ]
+{
+  'oh-my-zsh': {
+    'users': {
+      'vagrant': {
+        'theme': 'gentoo',
+        'plugins': [ 'git' ],
+        'zsh_options': [
+          'export EDITOR=vim',
+          'setopt NO_CORRECT_ALL'
+        ]
+      }
     }
   }
 }
