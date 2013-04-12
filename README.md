@@ -10,7 +10,6 @@ Requirements
 Attributes
 ----------
 
-e.g.
 #### oh-my-zsh::users
 <table>
   <tr>
@@ -41,14 +40,14 @@ Set `['oh-my-zsh']['users']` and include `oh-my-zsh::users` in your node's
 
 ```json
 {
-  'oh-my-zsh': {
-    'users': {
-      'vagrant': {
-        'theme': 'gentoo',
-        'plugins': [ 'git' ],
-        'zsh_options': [
-          'export EDITOR=vim',
-          'setopt NO_CORRECT_ALL'
+  "oh-my-zsh": {
+    "users": {
+      "vagrant": {
+        "theme": "gentoo",
+        "plugins": [ "git" ],
+        "zsh_options": [
+          "export EDITOR=vim",
+          "setopt NO_CORRECT_ALL"
         ]
       }
     }
