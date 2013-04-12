@@ -62,10 +62,17 @@ Vagrant::Config.run do |config|
 
   config.vm.provision :chef_solo do |chef|
     chef.json = {
-      :mysql => {
-        :server_root_password => 'rootpass',
-        :server_debian_password => 'debpass',
-        :server_repl_password => 'replpass'
+      'oh-my-zsh' => {
+        'users' => {
+          'vagrant' => {
+            'theme' => 'gentoo',
+            'plugins' => %w{ git },
+            'zsh_options' => [
+              'export EDITOR=vim',
+              'setopt NO_CORRECT_ALL'
+            ]
+          }
+        }
       }
     }
 
