@@ -6,6 +6,7 @@
 #
 # All rights reserved - Do Not Redistribute
 #
-include_recipe 'zsh'
-
-package 'git'
+%w{
+  git
+  zsh
+}.each { |obj| include_recipe obj }

@@ -1,0 +1,36 @@
+---
+driver_plugin: vagrant
+driver_config:
+  require_chef_omnibus: true
+
+platforms:
+- name: ubuntu-10.04_chef-10
+  driver_config:
+    box: sendgrid_ubuntu-10.04_chef-10
+    box_url: http://repo.sendgrid.net/sendgrid_ubuntu-10.04_chef-10.box
+- name: centos-6_chef-10
+  driver_config:
+    box: sendgrid_centos-6_chef-10
+    box_url: http://repo.sendgrid.net/sendgrid_centos-6_chef-10.box
+- name: centos-6_chef-11
+  driver_config:
+    box: sendgrid_centos-6_chef-11
+    box_url: http://repo.sendgrid.net/sendgrid_centos-6_chef-11.box
+
+suites:
+- name: default
+  run_list: ["recipe[oh-my-zsh::users]"]
+  attributes: {
+    "oh-my-zsh": {
+      "users": {
+        "vagrant": {
+          "theme": "gentoo",
+          "plugins": [ "git" ],
+          "zsh_options": [
+            "export EDITOR=vim",
+            "setopt NO_CORRECT_ALL"
+          ]
+        }
+      }
+    }
+  }

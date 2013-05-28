@@ -1,6 +1,4 @@
 action :create do
-  %w{ zsh git }.each { |obj| package obj }
-
   system_install = false
   install_dir = if ::File.writable?('/opt/oh-my-zsh')
     system_install = true
