@@ -19,7 +19,9 @@ platforms:
 
 suites:
 - name: default
-  run_list: ["recipe[oh-my-zsh::users]"]
+  run_list:
+   - recipe[minitest-handler]
+   - recipe[oh-my-zsh::users]
   attributes: {
     "oh-my-zsh": {
       "users": {
