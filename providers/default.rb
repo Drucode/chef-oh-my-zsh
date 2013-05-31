@@ -29,7 +29,6 @@ action :create do
 
   user new_resource.user do
     shell '/bin/zsh'
-    action :manage
   end
 
   new_resource.updated_by_last_action(true)
@@ -38,7 +37,6 @@ end
 action :remove do
   user new_resource.user do
     shell '/bin/bash'
-    action :manage
   end
 
   package 'zsh' do
